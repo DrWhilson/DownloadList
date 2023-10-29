@@ -7,7 +7,7 @@ sudo snap install nvim --classic
 echo "some progers stuff"
 sudo apt install python3
 sudo apt install python3-venv
-sudo apt install git
+sudo apt install clang
 sudo apt install gcc
 sudo apt install cpputest
 sudo apt install valgrind
