@@ -11,14 +11,12 @@ echo "Now GIT"
 mkdir ./.config/nvim
 git clone --depth=1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim/
 sudo rm ~/.config/nvim/lua/plugins/configs/notify.lua
-sudo echo "
-local notify = vim.notify
+sudo echo "local notify = vim.notify
 vim.notify = function(msg, ...)
-  if msg:match("warning: multiple different client offset_encordings") then
-    return
-  end
+    if msg:match("warning: multiple different client offset_encodings") then
+        return
+    end
 
-  notify(msg, ...)
-end
-" >> ~/.config/nvim/lua/plugins/configs/notify.lua
+    notify(msg, ...)
+end" >> ~/.config/nvim/lua/plugins/configs/notify.lua
 echo "Done!"
