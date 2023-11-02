@@ -11,6 +11,7 @@ sudo apt install python3-venv
 
 #gcc
 sudo apt-get install build-essential
+sudo apt install libstdc++-12-dev 
 sudo update-alternatives --config cc
 
 sudo apt install cpputest
