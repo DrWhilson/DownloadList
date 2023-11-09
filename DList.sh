@@ -20,4 +20,5 @@ sudo apt install cmake
 echo "some programs"
 sudo apt install brasero
 sudo apt install gimp
+sudo apt install telegram-desktop
 echo "I'l do it mother #@%#$"
