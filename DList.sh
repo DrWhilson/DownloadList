@@ -13,23 +13,28 @@ if [[ "$1" == "Ubuntu" ]]; then
   sudo apt install python3
   sudo apt install python3-venv
   sudo apt-get install build-essential
-  # sudo apt install valgrind
   sudo apt install cmake
-  # sudo apt install libstdc++-12-dev
-  # sudo update-alternatives --config cc
 
-  # echo "Install GTest"
-  # sudo apt-get install libgtest-dev
-  # cd /usr/src/gtest
-  # sudo cmake CMakeLists.txt
-  # sudo make
-  # cd ./lib
-  # sudo cp *.a /usr/lib
-
+  if [[ "$2" == "full" ]]; then
+    sudo apt install valgrind
+    sudo apt install libstdc++-12-dev
+    sudo update-alternatives --config cc
+    echo "Install GTest"
+    sudo apt-get install libgtest-dev
+    cd /usr/src/gtest
+    sudo cmake CMakeLists.txt
+    sudo make
+    cd ./lib
+    sudo cp *.a /usr/lib
+  else 
+    echo "Some pac skipepd. Use full to install it"
+  fi
+  
   echo "Some programs"
-  sudo apt install brasero
+  # sudo apt install brasero
   sudo apt install gimp
   sudo apt install telegram-desktop
+  neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
   packer -S neofetch
@@ -42,11 +47,11 @@ elif [[ "$1" == "Arch" ]]; then
   pacman -Syu cmake
 
   echo "Some programs"
-  sudo pacman -S brasero
+  # sudo pacman -S brasero
   sudo pacman -S gimp
   sudo pacman -S telegram-desktop
+  neofetch
 else
   echo "Set system as param: Ubuntu or Arch"
 fi
-neofetch
 echo "Ok, I do it another time"
