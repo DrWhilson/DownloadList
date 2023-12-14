@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Ok, cool terminal"
 sudo apt install zsh
 sudo apt install curl

@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Ok now fonts"
 mkdir buff
 mv ./3270.zip ./buff/3270.zip
@@ -20,6 +21,7 @@ vim.notify = function(msg, ...)
 
     notify(msg, ...)
 end" >> ~/.config/nvim/lua/plugins/configs/notify.lua
-echo "Done!"
 
 sed -i "s/relativenumber = true/relativenumber = false/g" ~/.config/nvim/lua/astronvim/options.lua
+
+echo "Done!"

@@ -1,35 +1,52 @@
+#!/bin/bash
 echo "I try this ;~;"
-sudo apt update
-sudo apt upgrade
-sudo apt install snap
-echo "This is you term"
-sudo apt install cool-retro-term
-sudo snap install nvim --classic
-echo "some progers stuff"
-sudo apt install python3
-sudo apt install python3-venv
+if [[ "$1" == "Ubuntu" ]]; then
+  sudo apt update
+  sudo apt upgrade
+  sudo apt-get install neofetch
+  sudo apt install snap
 
-#gcc
-sudo apt-get install build-essential
+  echo "This is you term"
+  sudo snap install nvim --classic
 
-sudo apt install valgrind
-sudo apt install cmake
-# sudo apt install libstdc++-12-dev
-# sudo update-alternatives --config cc
+  echo "some progers stuff"
+  sudo apt install python3
+  sudo apt install python3-venv
+  sudo apt-get install build-essential
+  # sudo apt install valgrind
+  sudo apt install cmake
+  # sudo apt install libstdc++-12-dev
+  # sudo update-alternatives --config cc
 
-# echo "Install CppUTest"
-# sudo apt install cpputest
+  # echo "Install GTest"
+  # sudo apt-get install libgtest-dev
+  # cd /usr/src/gtest
+  # sudo cmake CMakeLists.txt
+  # sudo make
+  # cd ./lib
+  # sudo cp *.a /usr/lib
 
-# echo "Install GTest"
-# sudo apt-get install libgtest-dev
-# cd /usr/src/gtest
-# sudo cmake CMakeLists.txt
-# sudo make
-# cd ./lib
-# sudo cp *.a /usr/lib
+  echo "Some programs"
+  sudo apt install brasero
+  sudo apt install gimp
+  sudo apt install telegram-desktop
+elif [[ "$1" == "Arch" ]]; then
+  sudo pacman -Syu
+  packer -S neofetch
 
-echo "some programs"
-sudo apt install brasero
-sudo apt install gimp
-sudo apt install telegram-desktop
-echo "I'l do it mother #@%#$"
+  echo "This is you term"
+  sudo pacman -S neovim
+
+  echo "Some progers stuff"
+  sudo pacman -Sy base-devel wget
+  pacman -Syu cmake
+
+  echo "Some programs"
+  sudo pacman -S brasero
+  sudo pacman -S gimp
+  sudo pacman -S telegram-desktop
+else
+  echo "Set system as param: Ubuntu or Arch"
+fi
+neofetch
+echo "Ok, I do it another time"
