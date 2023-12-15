@@ -55,5 +55,6 @@ elif [[ "$1" == "Arch" ]]; then
   neofetch
 else
   echo "Set system as param: Ubuntu or Arch"
+  exit
 fi
 echo "Ok, I do it another time"
