@@ -37,7 +37,7 @@ if [[ "$1" == "Ubuntu" ]]; then
   neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
-  packer -S neofetch
+  sudo pacman -S neofetch
 
   echo "This is you term"
   sudo pacman -S neovim
@@ -50,6 +50,7 @@ elif [[ "$1" == "Arch" ]]; then
   # sudo pacman -S brasero
   sudo pacman -S gimp
   sudo pacman -S telegram-desktop
+  sudo pacman -S firefox
   neofetch
 else
   echo "Set system as param: Ubuntu or Arch"
