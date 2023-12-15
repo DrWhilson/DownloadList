@@ -38,6 +38,7 @@ if [[ "$1" == "Ubuntu" ]]; then
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
   sudo pacman -S neofetch
+  sudo pacman -S networkmanager
 
   echo "This is you term"
   sudo pacman -S neovim
