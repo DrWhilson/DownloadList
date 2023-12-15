@@ -8,6 +8,7 @@ elif [[ "$1" == "Arch" ]]; then
   sudo pacman -S curl
 else
   echo "Set system as param: Ubuntu or Arch" 
+  exit
 fi
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
