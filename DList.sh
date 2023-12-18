@@ -34,6 +34,7 @@ if [[ "$1" == "Ubuntu" ]]; then
   # sudo apt install brasero
   sudo apt install gimp
   sudo apt install telegram-desktop
+  sudo snap install discord
   neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
@@ -52,6 +53,7 @@ elif [[ "$1" == "Arch" ]]; then
   sudo pacman -S gimp
   sudo pacman -S telegram-desktop
   sudo pacman -S firefox
+  sudo pacman -S discord
   neofetch
 else
   echo "Set system as param: Ubuntu or Arch"
