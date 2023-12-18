@@ -1,13 +1,13 @@
 #!/bin/bash
 echo "Ok now fonts"
-mkdir buff
-mv ./3270.zip ./buff/3270.zip
-cd ./buff
-sudo unzip 3270.zip
-mv ./3270.zip ../3270.zip
-cd ..
-sudo mv ./buff/* /usr/local/share/fonts/
-sudo rm -r ./buff
+# mkdir buff
+# mv ./3270.zip ./buff/3270.zip
+# cd ./buff
+# sudo unzip 3270.zip
+# mv ./3270.zip ../3270.zip
+# cd ..
+# sudo mv ./buff/* /usr/local/share/fonts/
+# sudo rm -r ./buff
 echo "Now GIT"
 sudo rm -r ~/.config/nvim
 mkdir ~/.config/nvim
