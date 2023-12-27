@@ -40,6 +40,7 @@ elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
   sudo pacman -S neofetch
   sudo pacman -S networkmanager
+  sudo systemctl start NetworkManager.service
 
   echo "This is you term"
   sudo pacman -S neovim
