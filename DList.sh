@@ -39,6 +39,7 @@ if [[ "$1" == "Ubuntu" ]]; then
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
   sudo pacman -S neofetch
+  suso pacman -S xf86-input-synaptics
   sudo pacman -S networkmanager
   sudo systemctl start NetworkManager.service
 
@@ -50,11 +51,12 @@ elif [[ "$1" == "Arch" ]]; then
   pacman -Syu cmake
 
   echo "Some programs"
-  # sudo pacman -S brasero
+  sudo pacman -S brasero
   sudo pacman -S gimp
   sudo pacman -S telegram-desktop
   sudo pacman -S firefox
   sudo pacman -S discord
+
   neofetch
 else
   echo "Set system as param: Ubuntu or Arch"
