@@ -31,10 +31,8 @@ if [[ "$1" == "Ubuntu" ]]; then
   fi
   
   echo "Some programs"
-  # sudo apt install brasero
   sudo apt install gimp
   sudo apt install telegram-desktop
-  sudo snap install discord
   neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
@@ -51,11 +49,9 @@ elif [[ "$1" == "Arch" ]]; then
   pacman -Syu cmake
 
   echo "Some programs"
-  sudo pacman -S brasero
   sudo pacman -S gimp
   sudo pacman -S telegram-desktop
   sudo pacman -S firefox
-  sudo pacman -S discord
 
   neofetch
 else
