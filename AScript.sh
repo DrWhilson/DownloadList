@@ -1,13 +1,10 @@
 #!/bin/bash
 echo "Ok now fonts"
-# mkdir buff
-# mv ./3270.zip ./buff/3270.zip
-# cd ./buff
-# sudo unzip 3270.zip
-# mv ./3270.zip ../3270.zip
-# cd ..
-# sudo mv ./buff/* /usr/local/share/fonts/
-# sudo rm -r ./buff
+unzip ./3270.zip -d ./3270
+mv ./3270/*ttf ~/.local/share/fonts/
+rm -r ./3270
+fc-cache -f -v
+
 echo "Now GIT"
 sudo rm -r ~/.config/nvim
 
