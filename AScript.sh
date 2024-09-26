@@ -10,8 +10,11 @@ echo "Ok now fonts"
 # sudo rm -r ./buff
 echo "Now GIT"
 sudo rm -r ~/.config/nvim
-mkdir ~/.config/nvim
-git clone --depth=1 https://github.com/AstroNvim/AstroNvim.git ~/.config/nvim/
+
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+echo "now Astro config"
 sudo rm ~/.config/nvim/lua/plugins/configs/notify.lua
 sudo echo "local notify = vim.notify
 vim.notify = function(msg, ...)
