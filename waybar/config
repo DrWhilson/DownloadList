@@ -1,0 +1,157 @@
+{
+  "position": "top",
+  "output": [
+    "HDMI-A-1"
+  ],
+    "margin-top" : 0,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height" : 28,
+    "modules-left": [
+      "custom/appmenuicon",
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [
+    "cpu",
+    "memory",
+    "custom/gpu",
+    ],
+    "modules-right": [
+    "hyprland/language",
+    "custom/brightness-toggle",
+    "pulseaudio",
+    "battery",
+    "network",
+    "clock",
+    "custom/powermenu",
+    ],
+    "hyprland/window": {
+      "format": "{}",
+      "max-length": 35,
+      "rewrite": {
+        "": "Hyprland"
+      },
+      "separate-outputs": true,
+    },
+    "custom/appmenuicon": {
+        "format": " ",
+        "on-click": "wofi -show drun -replace",
+        "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": "",
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4, // 5 workspaces by default on every monitor
+        "HDMI-A-1": 4 // but only three on HDMI-A-1
+      },
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+    },
+    "keyboard-state": {
+      "numlock": false,
+      "capslock": false,
+      "format": "{name}",
+      "format-icons": {
+        "en": "US",
+        "ru": "RU",
+        "ua": "UA"
+      }
+    },
+    "cpu": {
+      "format": "󰍛 {usage}%",
+      "tooltip": false
+    },
+    "memory": {
+      "format": "󰫗 {}%"
+    },
+    "custom/gpu": {
+      "format": "󰾲 {}%",
+      "interval": 2,
+      "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | head -1",
+      "return-type": ""
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", ""]
+    },
+    "custom/brightness-toggle": {
+      "exec": "~/.config/waybar/scripts/brightness-toggle.sh",
+      "return-type": "json",
+      "format": "{}",
+      "on-click": "~/.config/waybar/scripts/brightness-toggle.sh click left",
+      "on-click-right": "~/.config/waybar/scripts/brightness-toggle.sh click right",
+      "on-scroll-up": "~/.config/waybar/scripts/brightness-toggle.sh click right",
+      "on-scroll-down": "~/.config/waybar/scripts/brightness-toggle.sh click left",
+      "tooltip": false,
+      "signal": 2 
+    },
+    "custom/brightnessalt": {
+      "module": "custom/brightness",
+      "exec": "~/.config/waybar/scripts/waybar-brightness.sh",
+      "return-type": "json",
+      "format": "{}",
+      "on-scroll-up": "~/.config/waybar/scripts/waybar-brightness.sh up",
+      "on-scroll-down": "~/.config/waybar/scripts/waybar-brightness.sh down",
+      "tooltip": false,
+      "interval": 5
+    },
+    "custom/brightness": {
+      "format": "󰖨 {text}%",
+      "exec": "~/.config/waybar/scripts/get-brightness.sh",
+      "interval": 10,
+      "on-scroll-up": "~/.config/waybar/scripts/brightness-up.sh",
+      "on-scroll-down": "~/.config/waybar/scripts/brightness-down.sh",
+      "tooltip": false
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon}  {capacity}%",
+      "format-full": "{icon}  {capacity}%",
+      "format-charging": "  {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+      "format-wifi": "  {signalStrength}%",
+      "format-ethernet": "{}",
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": " ⚠ ",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/powermenu": {
+      "format": "   ",
+      "tooltip": false,
+      "on-click": "exec wlogout -p layer-shell"
+  },
+}
