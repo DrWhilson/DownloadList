@@ -44,12 +44,12 @@ elif [[ "$1" == "Arch" ]]; then
 
   echo "Utils"
 
-  sudo pacman -S mate-terminal btop cava mpv figlet lolcat lsd bat rm-rip 
+  sudo pacman -S mate-terminal cool-retro-term btop cava mpv figlet lolcat lsd bat rm-rip superfile 
 
   sudo pacman -S neofetch 
 
   sudo pacman -S waybar wofi hyprpaper
-  yay -S wlogout
+  yay -S wlogout grimblast-git wayscriber-bin
 
   echo "This is you term"
   sudo pacman -S neovim
