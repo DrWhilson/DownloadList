@@ -31,15 +31,16 @@ if [[ "$1" == "Ubuntu" ]]; then
   fi
   
   echo "Some programs"
-  sudo apt install gimp
   sudo apt install telegram-desktop
   neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
-  sudo pacman -S neofetch
-  suso pacman -S xf86-input-synaptics
-  sudo pacman -S networkmanager
-  sudo systemctl start NetworkManager.service
+  sudo pacman -S mate-terminal btop cava mpv figlet lolcat
+
+  sudo pacman -S neofetch 
+
+  sudo pacman -S waybar wofi hyprpaper
+  yay -S wlogout
 
   echo "This is you term"
   sudo pacman -S neovim
@@ -47,10 +48,10 @@ elif [[ "$1" == "Arch" ]]; then
   echo "Some progers stuff"
   sudo pacman -Sy base-devel wget
   pacman -Syu cmake
+  sudo pacman -Syu dotnet-sdk aspnet-runtime
+  sudo pacman -Syu nodejs npm
 
   echo "Some programs"
-  sudo pacman -S gimp
-  sudo pacman -S telegram-desktop
   sudo pacman -S firefox
 
   neofetch
