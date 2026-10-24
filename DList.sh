@@ -35,7 +35,16 @@ if [[ "$1" == "Ubuntu" ]]; then
   neofetch
 elif [[ "$1" == "Arch" ]]; then
   sudo pacman -Syu
-  sudo pacman -S mate-terminal btop cava mpv figlet lolcat
+
+  echo "Some progers stuff"
+  sudo pacman -Sy base-devel wget
+  sudo pacman -Syu cmake
+  sudo pacman -Syu dotnet-sdk aspnet-runtime
+  sudo pacman -Syu nodejs npm
+
+  echo "Utils"
+
+  sudo pacman -S mate-terminal btop cava mpv figlet lolcat lsd bat rm-rip 
 
   sudo pacman -S neofetch 
 
@@ -44,13 +53,7 @@ elif [[ "$1" == "Arch" ]]; then
 
   echo "This is you term"
   sudo pacman -S neovim
-
-  echo "Some progers stuff"
-  sudo pacman -Sy base-devel wget
-  pacman -Syu cmake
-  sudo pacman -Syu dotnet-sdk aspnet-runtime
-  sudo pacman -Syu nodejs npm
-
+  
   echo "Some programs"
   sudo pacman -S firefox
 
